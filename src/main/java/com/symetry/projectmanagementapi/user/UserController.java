@@ -1,5 +1,7 @@
 package com.symetry.projectmanagementapi.user;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +22,11 @@ public class UserController {
     @GetMapping("{userId}")
     public User getUser(@PathVariable Long userId){
         return userService.getUser(userId);
+    }
+
+    @GetMapping("getAll")
+    public List<User> getAllUsers(){
+        return userService.getAllUsers();
     }
     
 }

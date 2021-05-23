@@ -1,5 +1,6 @@
 package com.symetry.projectmanagementapi.user;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,9 @@ public class UserService {
             }
         }
         return user.get();
+    }
+
+    public List<User> getAllUsers(){
+        return UserRepository.findAll();
     }
 }
